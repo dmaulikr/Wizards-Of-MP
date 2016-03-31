@@ -75,7 +75,7 @@ static float DATE_CARD_SPACING = 10;
     scrollY += dateLineHeight + DATE_CARD_SPACING;
     
     ActivityCardView *card1 = [[ActivityCardView alloc] initWithFrame:CGRectMake(cardX, scrollY, cardWidth, cardHeight)];
-    [card1 setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"OrangeBG"]]];
+    [card1 setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"SalmonBG"]]];
     card1.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, card1.frame.size.width-20, card1.frame.size.height/3-10)];
     card1.nameLabel.text = @"Repeat the Words";
     card1.nameLabel.textColor = [UIColor whiteColor];
@@ -100,7 +100,7 @@ static float DATE_CARD_SPACING = 10;
     scrollY += dateLineHeight + DATE_CARD_SPACING;
     
     ActivityCardView *card2 = [[ActivityCardView alloc] initWithFrame:CGRectMake(cardX, scrollY, cardWidth, cardHeight)];
-    [card2 setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PurpleBG"]]];
+    [card2 setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"SeaGreenBG"]]];
     card2.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, card2.frame.size.width-20, card2.frame.size.height/3-10)];
     card2.nameLabel.text = @"Repeat the Letters";
     card2.nameLabel.textColor = [UIColor whiteColor];
@@ -125,7 +125,7 @@ static float DATE_CARD_SPACING = 10;
     scrollY += dateLineHeight + DATE_CARD_SPACING;
     
     ActivityCardView *card3 = [[ActivityCardView alloc] initWithFrame:CGRectMake(cardX, scrollY, cardWidth, cardHeight)];
-    [card3 setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PurpleBG"]]];
+    [card3 setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"SeaGreenBG"]]];
     card3.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, card3.frame.size.width-20, card3.frame.size.height/3-10)];
     card3.nameLabel.text = @"Read the Story";
     card3.nameLabel.textColor = [UIColor whiteColor];
@@ -150,7 +150,7 @@ static float DATE_CARD_SPACING = 10;
     scrollY += dateLineHeight + DATE_CARD_SPACING;
     
     ActivityCardView *card4 = [[ActivityCardView alloc] initWithFrame:CGRectMake(cardX, scrollY, cardWidth, cardHeight)];
-    [card4 setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"PurpleBG"]]];
+    [card4 setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"SeaGreenBG"]]];
     card4.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, card4.frame.size.width-20, card4.frame.size.height/3-10)];
     card4.nameLabel.text = @"Identify the Letter-Sound";
     card4.nameLabel.textColor = [UIColor whiteColor];
