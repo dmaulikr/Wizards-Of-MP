@@ -14,6 +14,7 @@
 @property (nonatomic, strong) ClientInfoData *clientData;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *lastSessionDateLabel;
+@property (nonatomic, strong) UILabel *viewClientLabel;
 @property (nonatomic, strong) UIImageView *profileImageView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withClientData:(ClientInfoData*) clientData;

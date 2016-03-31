@@ -40,7 +40,7 @@
 //    [self.nameLabel setBackgroundColor:[UIColor purpleColor]];
     [self.nameLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:20]];
     [self.nameLabel setNumberOfLines:1];
-    self.nameLabel.text = @"Repeat The Words";
+//    self.nameLabel.text = @"Repeat The Words";
     self.nameLabel.text = self.progressData.name;
     self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.nameLabel.adjustsFontSizeToFitWidth = YES;

@@ -32,85 +32,85 @@
     
     [self setBackgroundColor:[UIColor clearColor]];
     
+    self.profileImageView = [[UIImageView alloc]initWithFrame:CGRectZero];
+//    [self.profileImageView setImage:[UIImage imageNamed:@"client1"]];
+    [self.profileImageView setImage:[UIImage imageNamed:self.clientData.profileImageName]];
+    self.profileImageView.layer.cornerRadius = 10;
+    self.profileImageView.translatesAutoresizingMaskIntoConstraints = NO;
+//    self.profileImageView.layer.borderColor = [[UIColor blackColor] CGColor];
+//    self.profileImageView.layer.borderWidth = .5;
+    self.profileImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [self.profileImageView setClipsToBounds:YES];
+    
     self.nameLabel = [UILabel new];
     [self.nameLabel setFrame:CGRectZero];
     [self.nameLabel setTextColor:[UIColor darkGrayColor]];
     [self.nameLabel setTextAlignment:NSTextAlignmentLeft];
-    //    [self.nameLabel setBackgroundColor:[UIColor purpleColor]];
+//    [self.nameLabel setBackgroundColor:[UIColor purpleColor]];
     [self.nameLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:20]];
     [self.nameLabel setNumberOfLines:1];
-    self.nameLabel.text = @"Repeat The Words";
+//    self.nameLabel.text = @"Repeat The Words";
     self.nameLabel.text = self.clientData.name;
     self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.nameLabel.adjustsFontSizeToFitWidth = YES;
     
     self.lastSessionDateLabel = [UILabel new];
     [self.lastSessionDateLabel setFrame:CGRectZero];
-    
-    if([self.clientData.lastSessionDate isEqualToString:@"Completed"]) {
-        [self.lastSessionDateLabel setTextColor:[UIColor orangeColor]];
-    }
-    else {
-       [self.lastSessionDateLabel setTextColor:[UIColor redColor]];
-    }
-    
+    [self.lastSessionDateLabel setTextColor:[UIColor blackColor]];
     [self.lastSessionDateLabel setTextAlignment:NSTextAlignmentLeft];
-    //    [self.lastSessionDateLabel setBackgroundColor:[UIColor purpleColor]];
+//    [self.lastSessionDateLabel setBackgroundColor:[UIColor purpleColor]];
     [self.lastSessionDateLabel setFont:[UIFont fontWithName:@"Helvetica-LightOblique" size:15]];
     [self.lastSessionDateLabel setNumberOfLines:1];
     self.lastSessionDateLabel.text = self.clientData.lastSessionDate;
     self.lastSessionDateLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.lastSessionDateLabel.adjustsFontSizeToFitWidth = YES;
     
-//    self.completedDateLabel = [UILabel new];
-//    [self.completedDateLabel setFrame:CGRectZero];
-//    [self.completedDateLabel setTextColor:[UIColor blackColor]];
-//    [self.completedDateLabel setTextAlignment:NSTextAlignmentLeft];
-//    //    [self.completedDateLabel setBackgroundColor:[UIColor purpleColor]];
-//    [self.completedDateLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:12]];
-//    [self.completedDateLabel setNumberOfLines:1];
-//    self.completedDateLabel.text = self.ClientData.dateCompleted;
-//    self.completedDateLabel.translatesAutoresizingMaskIntoConstraints = NO;
-//    self.completedDateLabel.adjustsFontSizeToFitWidth = YES;
+    self.viewClientLabel = [UILabel new];
+    [self.viewClientLabel setFrame:CGRectZero];
+    [self.viewClientLabel setTextColor:[UIColor colorWithRed:47/255.0f green:109/255.0f blue:153/255.0f alpha:1.0f]];
+    [self.viewClientLabel setTextAlignment:NSTextAlignmentRight];
+    //    [self.viewClientLabel setBackgroundColor:[UIColor purpleColor]];
+    [self.viewClientLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:25]];
+    [self.viewClientLabel setNumberOfLines:1];
+    [self.viewClientLabel setHidden:NO];
+    self.viewClientLabel.text = @">";
+    self.viewClientLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.viewClientLabel.adjustsFontSizeToFitWidth = YES;
     
-    //    self.finishedDateLabel = [UILabel new];
-    //    [self.finishedDateLabel setFrame:CGRectZero];
-    //    [self.finishedDateLabel setTextColor:[UIColor blackColor]];
-    //    [self.finishedDateLabel setTextAlignment:NSTextAlignmentLeft];
-    //    [self.finishedDateLabel setBackgroundColor:[UIColor purpleColor]];
-    //    [self.finishedDateLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:12]];
-    //    [self.finishedDateLabel setNumberOfLines:1];
-    //    self.finishedDateLabel.text = self.testStatusData.finishedDate;
-    //    self.finishedDateLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    //    self.finishedDateLabel.adjustsFontSizeToFitWidth = YES;
-    
-//    self.viewScoreLabel = [UILabel new];
-//    [self.viewScoreLabel setFrame:CGRectZero];
-//    [self.viewScoreLabel setTextColor:[UIColor colorWithRed:47/255.0f green:109/255.0f blue:153/255.0f alpha:1.0f]];
-//    [self.viewScoreLabel setTextAlignment:NSTextAlignmentRight];
-//    //    [self.viewScoreLabel setBackgroundColor:[UIColor purpleColor]];
-//    [self.viewScoreLabel setFont:[UIFont fontWithName:@"HelveticaNeue" size:15]];
-//    [self.viewScoreLabel setNumberOfLines:1];
-//    [self.viewScoreLabel setHidden:YES];
-//    self.viewScoreLabel.text = @"View Score >";
-//    self.viewScoreLabel.translatesAutoresizingMaskIntoConstraints = NO;
-//    self.viewScoreLabel.adjustsFontSizeToFitWidth = YES;
-//    
+    [self addSubview:self.profileImageView];
     [self addSubview:self.nameLabel];
     [self addSubview:self.lastSessionDateLabel];
-//    [self addSubview:self.completedDateLabel];
-//    //    [self addSubview:self.finishedDateLabel];
-//    [self addSubview:self.viewScoreLabel];
+    [self addSubview:self.viewClientLabel];
     
     [self setupConstraintsForCellView];
 }
 
 - (void)setupConstraintsForCellView {
     
+    NSLayoutConstraint *profileImageCenterYConstraint = [NSLayoutConstraint
+                                                         constraintWithItem:self.profileImageView attribute:NSLayoutAttributeTop
+                                                         relatedBy:NSLayoutRelationEqual toItem:self
+                                                         attribute:NSLayoutAttributeTop multiplier:1.0 constant:5];
+    
+    NSLayoutConstraint *profileImageCenterXConstraint  = [NSLayoutConstraint
+                                                          constraintWithItem:self.profileImageView attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual toItem:self
+                                                          attribute:NSLayoutAttributeCenterX multiplier:0.25 constant:0];
+    
+    NSLayoutConstraint *profileImageWidthConstraint  = [NSLayoutConstraint
+                                                        constraintWithItem:self.profileImageView attribute:NSLayoutAttributeWidth
+                                                        relatedBy:NSLayoutRelationEqual toItem:self
+                                                        attribute:NSLayoutAttributeWidth multiplier:0.20 constant:0];
+    
+    NSLayoutConstraint *profileImageHeightConstraint  = [NSLayoutConstraint
+                                                         constraintWithItem:self.profileImageView attribute:NSLayoutAttributeHeight
+                                                         relatedBy:NSLayoutRelationEqual toItem:self.profileImageView
+                                                         attribute:NSLayoutAttributeWidth multiplier:1 constant:0];
+    
     NSLayoutConstraint *nameLabelLeftConstraint = [NSLayoutConstraint
                                                    constraintWithItem:self.nameLabel attribute:NSLayoutAttributeLeft
-                                                   relatedBy:NSLayoutRelationEqual toItem:self
-                                                   attribute:NSLayoutAttributeLeft multiplier:1 constant:15];
+                                                   relatedBy:NSLayoutRelationEqual toItem:self.profileImageView
+                                                   attribute:NSLayoutAttributeRight multiplier:1 constant:15];
     NSLayoutConstraint *nameLabelTopConstraint = [NSLayoutConstraint
                                                   constraintWithItem:self.nameLabel attribute:NSLayoutAttributeTop
                                                   relatedBy:NSLayoutRelationEqual toItem:self
@@ -143,65 +143,28 @@
                                                       relatedBy:NSLayoutRelationEqual toItem:self
                                                       attribute:NSLayoutAttributeWidth multiplier:0.4 constant:0];
     
-//    NSLayoutConstraint *completedDateLabelLeftConstraint = [NSLayoutConstraint
-//                                                            constraintWithItem:self.completedDateLabel attribute:NSLayoutAttributeLeft
-//                                                            relatedBy:NSLayoutRelationEqual toItem:self.nameLabel
-//                                                            attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
-//    NSLayoutConstraint *completedDateLabelTopConstraint = [NSLayoutConstraint
-//                                                           constraintWithItem:self.completedDateLabel attribute:NSLayoutAttributeTop
-//                                                           relatedBy:NSLayoutRelationEqual toItem:self.lastSessionDateLabel
-//                                                           attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
-//    
-//    NSLayoutConstraint *completedDateLabelHeightConstraint = [NSLayoutConstraint
-//                                                              constraintWithItem:self.completedDateLabel attribute:NSLayoutAttributeHeight
-//                                                              relatedBy:NSLayoutRelationEqual toItem:self
-//                                                              attribute:NSLayoutAttributeHeight multiplier:0.2 constant:0];
-//    NSLayoutConstraint *completedDateLabelWidthConstraint = [NSLayoutConstraint
-//                                                             constraintWithItem:self.completedDateLabel attribute:NSLayoutAttributeWidth
-//                                                             relatedBy:NSLayoutRelationEqual toItem:self
-//                                                             attribute:NSLayoutAttributeWidth multiplier:0.3 constant:0];
-//    
-//    //    NSLayoutConstraint *finishedDateLabelLeftConstraint = [NSLayoutConstraint
-//    //                                                           constraintWithItem:self.finishedDateLabel attribute:NSLayoutAttributeLeft
-//    //                                                           relatedBy:NSLayoutRelationEqual toItem:self.startedDateLabel
-//    //                                                           attribute:NSLayoutAttributeRight multiplier:1 constant:0];
-//    //    NSLayoutConstraint *finishedDateLabelTopConstraint = [NSLayoutConstraint
-//    //                                                          constraintWithItem:self.finishedDateLabel attribute:NSLayoutAttributeTop
-//    //                                                          relatedBy:NSLayoutRelationEqual toItem:self.lastSessionDateLabel
-//    //                                                          attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
-//    //
-//    //    NSLayoutConstraint *finishedDateLabelHeightConstraint = [NSLayoutConstraint
-//    //                                                             constraintWithItem:self.finishedDateLabel attribute:NSLayoutAttributeHeight
-//    //                                                             relatedBy:NSLayoutRelationEqual toItem:self
-//    //                                                             attribute:NSLayoutAttributeHeight multiplier:0.2 constant:0];
-//    //    NSLayoutConstraint *finishedDateLabelWidthConstraint = [NSLayoutConstraint
-//    //                                                            constraintWithItem:self.finishedDateLabel attribute:NSLayoutAttributeWidth
-//    //                                                            relatedBy:NSLayoutRelationEqual toItem:self
-//    //                                                            attribute:NSLayoutAttributeWidth multiplier:0.35 constant:0];
-//    
-//    NSLayoutConstraint *viewScoreLabelRightConstraint = [NSLayoutConstraint
-//                                                         constraintWithItem:self.viewScoreLabel attribute:NSLayoutAttributeRight
-//                                                         relatedBy:NSLayoutRelationEqual toItem:self
-//                                                         attribute:NSLayoutAttributeRight multiplier:1 constant:-15];
-//    NSLayoutConstraint *viewScoreLabelCenterYConstraint = [NSLayoutConstraint
-//                                                           constraintWithItem:self.viewScoreLabel attribute:NSLayoutAttributeCenterY
-//                                                           relatedBy:NSLayoutRelationEqual toItem:self
-//                                                           attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-//    
-//    NSLayoutConstraint *viewScoreLabelHeightConstraint = [NSLayoutConstraint
-//                                                          constraintWithItem:self.viewScoreLabel attribute:NSLayoutAttributeHeight
-//                                                          relatedBy:NSLayoutRelationEqual toItem:self
-//                                                          attribute:NSLayoutAttributeHeight multiplier:0.2 constant:0];
-//    NSLayoutConstraint *viewScoreLabelWidthConstraint = [NSLayoutConstraint
-//                                                         constraintWithItem:self.viewScoreLabel attribute:NSLayoutAttributeWidth
-//                                                         relatedBy:NSLayoutRelationEqual toItem:self
-//                                                         attribute:NSLayoutAttributeWidth multiplier:0.4 constant:0];
+    NSLayoutConstraint *viewClientLabelRightConstraint = [NSLayoutConstraint
+                                                         constraintWithItem:self.viewClientLabel attribute:NSLayoutAttributeRight
+                                                         relatedBy:NSLayoutRelationEqual toItem:self
+                                                         attribute:NSLayoutAttributeRight multiplier:1 constant:-15];
+    NSLayoutConstraint *viewClientLabelCenterYConstraint = [NSLayoutConstraint
+                                                           constraintWithItem:self.viewClientLabel attribute:NSLayoutAttributeCenterY
+                                                           relatedBy:NSLayoutRelationEqual toItem:self
+                                                           attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
     
-    [self addConstraints:@[nameLabelLeftConstraint, nameLabelTopConstraint, nameLabelHeightConstraint, nameLabelWidthConstraint,
+    NSLayoutConstraint *viewClientLabelHeightConstraint = [NSLayoutConstraint
+                                                          constraintWithItem:self.viewClientLabel attribute:NSLayoutAttributeHeight
+                                                          relatedBy:NSLayoutRelationEqual toItem:self
+                                                          attribute:NSLayoutAttributeHeight multiplier:0.2 constant:0];
+    NSLayoutConstraint *viewClientLabelWidthConstraint = [NSLayoutConstraint
+                                                         constraintWithItem:self.viewClientLabel attribute:NSLayoutAttributeWidth
+                                                         relatedBy:NSLayoutRelationEqual toItem:self
+                                                         attribute:NSLayoutAttributeWidth multiplier:0.4 constant:0];
+    
+    [self addConstraints:@[profileImageCenterXConstraint, profileImageCenterYConstraint, profileImageHeightConstraint, profileImageWidthConstraint,
+                           nameLabelLeftConstraint, nameLabelTopConstraint, nameLabelHeightConstraint, nameLabelWidthConstraint,
                            lastSessionDateLabelLeftConstraint, lastSessionDateLabelTopConstraint, lastSessionDateLabelHeightConstraint, lastSessionDateLabelWidthConstraint,
-                           //completedDateLabelLeftConstraint, completedDateLabelTopConstraint, completedDateLabelHeightConstraint, completedDateLabelWidthConstraint,
-                           /*finishedDateLabelLeftConstraint, finishedDateLabelTopConstraint, finishedDateLabelHeightConstraint, finishedDateLabelWidthConstraint,*/
-                           /*viewScoreLabelRightConstraint, viewScoreLabelCenterYConstraint, viewScoreLabelHeightConstraint, viewScoreLabelWidthConstraint*/]];
+                           viewClientLabelRightConstraint, viewClientLabelCenterYConstraint, viewClientLabelHeightConstraint, viewClientLabelWidthConstraint]];
 }
 
 @end
