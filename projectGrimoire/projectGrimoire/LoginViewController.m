@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "ClinicianHomeViewController.h"
 #import "ClientHomeViewController.h"
+#import "ClientInfoViewController.h"
 
 typedef enum : NSInteger {
     UsernameLabelTag = 0,
@@ -365,6 +366,8 @@ static NSString *const clientPass = @"client1";
     else {
         [self showErrorMsg:nil withMsg:@"Incorrect Username or Password. Please try again." withButtonLabel:@"Ok"];
     }
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

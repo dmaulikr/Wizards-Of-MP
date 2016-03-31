@@ -16,6 +16,6 @@
 @property (nonatomic, strong) UILabel *lastSessionDateLabel;
 @property (nonatomic, strong) UIImageView *profileImageView;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withProgressData:(ClientInfoData*) clientData;
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withClientData:(ClientInfoData*) clientData;
 
 @end
