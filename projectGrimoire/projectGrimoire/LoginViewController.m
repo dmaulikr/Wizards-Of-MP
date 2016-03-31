@@ -366,8 +366,7 @@ static NSString *const clientPass = @"client1";
     else {
         [self showErrorMsg:nil withMsg:@"Incorrect Username or Password. Please try again." withButtonLabel:@"Ok"];
     }
-    
-
+  
 }
 
 - (void)didReceiveMemoryWarning {

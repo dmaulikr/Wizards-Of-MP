@@ -55,28 +55,28 @@ static NSString * const ClientInfoCellIdentifier = @"ClientInfoCellIdentifier";
     NSMutableArray *dummyData = [NSMutableArray new];
     
     ClientInfoData *d1 = [[ClientInfoData alloc] init];
-    [d1 setName:@"Repeat The Words"];
-    [d1 setLastSessionDate:@"3-31-2016"];
+    [d1 setName:@"Client 000123"];
+    [d1 setLastSessionDate:@"Last Session: 3-31-2016"];
    
     
     ClientInfoData *d2 = [[ClientInfoData alloc] init];
-    [d2 setName:@"Repeat The Words"];
-    [d2 setLastSessionDate:@"Completed:3-31-2016"];
+    [d2 setName:@"Client 000124"];
+    [d2 setLastSessionDate:@"Last Session: 3-30-2016"];
  
     
     ClientInfoData *d3 = [[ClientInfoData alloc] init];
-    [d3 setName:@"Repeat The Words"];
-    [d3 setLastSessionDate:@"Completed:3-31-2016"];
+    [d3 setName:@"Client 001245"];
+    [d3 setLastSessionDate:@"Last Session: 3-28-2016"];
 
     
     ClientInfoData *d4 = [[ClientInfoData alloc] init];
-    [d4 setName:@"Repeat The Words"];
-    [d4 setLastSessionDate:@"Completed:3-31-2016"];
+    [d4 setName:@"Client 001246"];
+    [d4 setLastSessionDate:@"Last Session: 3-31-2016"];
 
     
     ClientInfoData *d5 = [[ClientInfoData alloc] init];
-    [d5 setName:@"Repeat The Words"];
-    [d5 setLastSessionDate:@"Completed:3-31-2016"];
+    [d5 setName:@"Client 001247"];
+    [d5 setLastSessionDate:@"Last Session: 3-25-2016"];
    
     
     [dummyData addObject:d1];
