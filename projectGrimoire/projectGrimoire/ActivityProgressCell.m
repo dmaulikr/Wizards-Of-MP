@@ -49,7 +49,7 @@
     [self.statusLabel setFrame:CGRectZero];
     
     if([self.progressData.status isEqualToString:@"Completed"]) {
-        [self.statusLabel setTextColor:[UIColor orangeColor]];
+        [self.statusLabel setTextColor:[UIColor blueColor]];
     }
     else {
         [self.statusLabel setTextColor:[UIColor redColor]];
