@@ -32,6 +32,8 @@
 		D869B85A1CAD887D008EC830 /* ClientInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D869B8581CAD887D008EC830 /* ClientInfoViewController.xib */; };
 		D869B85E1CAD889A008EC830 /* CreatecontentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B85C1CAD889A008EC830 /* CreatecontentViewController.m */; };
 		D869B85F1CAD889A008EC830 /* CreatecontentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D869B85D1CAD889A008EC830 /* CreatecontentViewController.xib */; };
+		D869B8681CAD94C6008EC830 /* ActivityCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B8671CAD94C6008EC830 /* ActivityCardView.m */; };
+		D869B86B1CAD94DD008EC830 /* DateLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B86A1CAD94DD008EC830 /* DateLineView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,10 @@
 		D869B85B1CAD889A008EC830 /* CreatecontentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatecontentViewController.h; sourceTree = "<group>"; };
 		D869B85C1CAD889A008EC830 /* CreatecontentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatecontentViewController.m; sourceTree = "<group>"; };
 		D869B85D1CAD889A008EC830 /* CreatecontentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatecontentViewController.xib; sourceTree = "<group>"; };
+		D869B8661CAD94C6008EC830 /* ActivityCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCardView.h; sourceTree = "<group>"; };
+		D869B8671CAD94C6008EC830 /* ActivityCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCardView.m; sourceTree = "<group>"; };
+		D869B8691CAD94DD008EC830 /* DateLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateLineView.h; sourceTree = "<group>"; };
+		D869B86A1CAD94DD008EC830 /* DateLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateLineView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 				D869B8281CAC6F64008EC830 /* View Controllers */,
 				D869B8451CACA70F008EC830 /* Custom Cells */,
 				D869B84C1CAD6819008EC830 /* Custom Structures */,
+				D869B8651CAD9447008EC830 /* Custom Views */,
 				D869B81D1CAC6E6F008EC830 /* Assets.xcassets */,
 				D869B81F1CAC6E6F008EC830 /* LaunchScreen.storyboard */,
 				D869B8221CAC6E6F008EC830 /* Info.plist */,
@@ -182,6 +189,17 @@
 				D869B8541CAD864D008EC830 /* ClientInfoData.m */,
 			);
 			name = "Custom Structures";
+			sourceTree = "<group>";
+		};
+		D869B8651CAD9447008EC830 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				D869B8661CAD94C6008EC830 /* ActivityCardView.h */,
+				D869B8671CAD94C6008EC830 /* ActivityCardView.m */,
+				D869B8691CAD94DD008EC830 /* DateLineView.h */,
+				D869B86A1CAD94DD008EC830 /* DateLineView.m */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +281,7 @@
 			files = (
 				D869B8431CAC90DE008EC830 /* ActivityProgressViewController.m in Sources */,
 				D869B82F1CAC7002008EC830 /* LoginViewController.m in Sources */,
+				D869B86B1CAD94DD008EC830 /* DateLineView.m in Sources */,
 				D869B85E1CAD889A008EC830 /* CreatecontentViewController.m in Sources */,
 				D869B8191CAC6E6F008EC830 /* ViewController.m in Sources */,
 				D869B8591CAD887D008EC830 /* ClientInfoViewController.m in Sources */,
@@ -276,6 +295,7 @@
 				D869B8521CAD8619008EC830 /* ClientInfoCell.m in Sources */,
 				D869B8341CAC8164008EC830 /* ClinicianHomeViewController.m in Sources */,
 				D869B8551CAD864D008EC830 /* ClientInfoData.m in Sources */,
+				D869B8681CAD94C6008EC830 /* ActivityCardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
