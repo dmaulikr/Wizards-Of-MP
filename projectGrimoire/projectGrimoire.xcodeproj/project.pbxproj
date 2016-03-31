@@ -13,6 +13,16 @@
 		D869B81C1CAC6E6F008EC830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D869B81A1CAC6E6F008EC830 /* Main.storyboard */; };
 		D869B81E1CAC6E6F008EC830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D869B81D1CAC6E6F008EC830 /* Assets.xcassets */; };
 		D869B8211CAC6E6F008EC830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D869B81F1CAC6E6F008EC830 /* LaunchScreen.storyboard */; };
+		D869B82F1CAC7002008EC830 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B82D1CAC7002008EC830 /* LoginViewController.m */; };
+		D869B8301CAC7002008EC830 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D869B82E1CAC7002008EC830 /* LoginViewController.xib */; };
+		D869B8341CAC8164008EC830 /* ClinicianHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B8321CAC8164008EC830 /* ClinicianHomeViewController.m */; };
+		D869B8351CAC8164008EC830 /* ClinicianHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D869B8331CAC8164008EC830 /* ClinicianHomeViewController.xib */; };
+		D869B8391CAC81A5008EC830 /* ClientHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B8371CAC81A5008EC830 /* ClientHomeViewController.m */; };
+		D869B83A1CAC81A5008EC830 /* ClientHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D869B8381CAC81A5008EC830 /* ClientHomeViewController.xib */; };
+		D869B83E1CAC90AB008EC830 /* ActivityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B83C1CAC90AB008EC830 /* ActivityListViewController.m */; };
+		D869B83F1CAC90AB008EC830 /* ActivityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D869B83D1CAC90AB008EC830 /* ActivityListViewController.xib */; };
+		D869B8431CAC90DE008EC830 /* ActivityProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B8411CAC90DE008EC830 /* ActivityProgressViewController.m */; };
+		D869B8441CAC90DE008EC830 /* ActivityProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D869B8421CAC90DE008EC830 /* ActivityProgressViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,21 @@
 		D869B81D1CAC6E6F008EC830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D869B8201CAC6E6F008EC830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D869B8221CAC6E6F008EC830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D869B82C1CAC7002008EC830 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D869B82D1CAC7002008EC830 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D869B82E1CAC7002008EC830 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		D869B8311CAC8164008EC830 /* ClinicianHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClinicianHomeViewController.h; sourceTree = "<group>"; };
+		D869B8321CAC8164008EC830 /* ClinicianHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClinicianHomeViewController.m; sourceTree = "<group>"; };
+		D869B8331CAC8164008EC830 /* ClinicianHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClinicianHomeViewController.xib; sourceTree = "<group>"; };
+		D869B8361CAC81A5008EC830 /* ClientHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientHomeViewController.h; sourceTree = "<group>"; };
+		D869B8371CAC81A5008EC830 /* ClientHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientHomeViewController.m; sourceTree = "<group>"; };
+		D869B8381CAC81A5008EC830 /* ClientHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClientHomeViewController.xib; sourceTree = "<group>"; };
+		D869B83B1CAC90AB008EC830 /* ActivityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityListViewController.h; sourceTree = "<group>"; };
+		D869B83C1CAC90AB008EC830 /* ActivityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityListViewController.m; sourceTree = "<group>"; };
+		D869B83D1CAC90AB008EC830 /* ActivityListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityListViewController.xib; sourceTree = "<group>"; };
+		D869B8401CAC90DE008EC830 /* ActivityProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityProgressViewController.h; sourceTree = "<group>"; };
+		D869B8411CAC90DE008EC830 /* ActivityProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityProgressViewController.m; sourceTree = "<group>"; };
+		D869B8421CAC90DE008EC830 /* ActivityProgressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityProgressViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +88,7 @@
 				D869B8171CAC6E6F008EC830 /* ViewController.h */,
 				D869B8181CAC6E6F008EC830 /* ViewController.m */,
 				D869B81A1CAC6E6F008EC830 /* Main.storyboard */,
+				D869B8281CAC6F64008EC830 /* View Controllers */,
 				D869B81D1CAC6E6F008EC830 /* Assets.xcassets */,
 				D869B81F1CAC6E6F008EC830 /* LaunchScreen.storyboard */,
 				D869B8221CAC6E6F008EC830 /* Info.plist */,
@@ -77,6 +103,28 @@
 				D869B8121CAC6E6F008EC830 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D869B8281CAC6F64008EC830 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D869B82C1CAC7002008EC830 /* LoginViewController.h */,
+				D869B82D1CAC7002008EC830 /* LoginViewController.m */,
+				D869B82E1CAC7002008EC830 /* LoginViewController.xib */,
+				D869B8311CAC8164008EC830 /* ClinicianHomeViewController.h */,
+				D869B8321CAC8164008EC830 /* ClinicianHomeViewController.m */,
+				D869B8331CAC8164008EC830 /* ClinicianHomeViewController.xib */,
+				D869B8361CAC81A5008EC830 /* ClientHomeViewController.h */,
+				D869B8371CAC81A5008EC830 /* ClientHomeViewController.m */,
+				D869B8381CAC81A5008EC830 /* ClientHomeViewController.xib */,
+				D869B83B1CAC90AB008EC830 /* ActivityListViewController.h */,
+				D869B83C1CAC90AB008EC830 /* ActivityListViewController.m */,
+				D869B83D1CAC90AB008EC830 /* ActivityListViewController.xib */,
+				D869B8401CAC90DE008EC830 /* ActivityProgressViewController.h */,
+				D869B8411CAC90DE008EC830 /* ActivityProgressViewController.m */,
+				D869B8421CAC90DE008EC830 /* ActivityProgressViewController.xib */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +184,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D869B8301CAC7002008EC830 /* LoginViewController.xib in Resources */,
 				D869B8211CAC6E6F008EC830 /* LaunchScreen.storyboard in Resources */,
+				D869B83F1CAC90AB008EC830 /* ActivityListViewController.xib in Resources */,
+				D869B8351CAC8164008EC830 /* ClinicianHomeViewController.xib in Resources */,
+				D869B8441CAC90DE008EC830 /* ActivityProgressViewController.xib in Resources */,
 				D869B81E1CAC6E6F008EC830 /* Assets.xcassets in Resources */,
+				D869B83A1CAC81A5008EC830 /* ClientHomeViewController.xib in Resources */,
 				D869B81C1CAC6E6F008EC830 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,9 +202,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D869B8431CAC90DE008EC830 /* ActivityProgressViewController.m in Sources */,
+				D869B82F1CAC7002008EC830 /* LoginViewController.m in Sources */,
 				D869B8191CAC6E6F008EC830 /* ViewController.m in Sources */,
+				D869B83E1CAC90AB008EC830 /* ActivityListViewController.m in Sources */,
+				D869B8391CAC81A5008EC830 /* ClientHomeViewController.m in Sources */,
 				D869B8161CAC6E6F008EC830 /* AppDelegate.m in Sources */,
 				D869B8131CAC6E6F008EC830 /* main.m in Sources */,
+				D869B8341CAC8164008EC830 /* ClinicianHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
