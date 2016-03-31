@@ -23,6 +23,9 @@
 		D869B83F1CAC90AB008EC830 /* ActivityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D869B83D1CAC90AB008EC830 /* ActivityListViewController.xib */; };
 		D869B8431CAC90DE008EC830 /* ActivityProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B8411CAC90DE008EC830 /* ActivityProgressViewController.m */; };
 		D869B8441CAC90DE008EC830 /* ActivityProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D869B8421CAC90DE008EC830 /* ActivityProgressViewController.xib */; };
+		D869B8481CACA752008EC830 /* ActivityCardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B8471CACA752008EC830 /* ActivityCardViewCell.m */; };
+		D869B84B1CAD04E7008EC830 /* ActivityProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B84A1CAD04E7008EC830 /* ActivityProgressCell.m */; };
+		D869B84F1CAD6854008EC830 /* ActivityProgressData.m in Sources */ = {isa = PBXBuildFile; fileRef = D869B84E1CAD6854008EC830 /* ActivityProgressData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,12 @@
 		D869B8401CAC90DE008EC830 /* ActivityProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityProgressViewController.h; sourceTree = "<group>"; };
 		D869B8411CAC90DE008EC830 /* ActivityProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityProgressViewController.m; sourceTree = "<group>"; };
 		D869B8421CAC90DE008EC830 /* ActivityProgressViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityProgressViewController.xib; sourceTree = "<group>"; };
+		D869B8461CACA752008EC830 /* ActivityCardViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCardViewCell.h; sourceTree = "<group>"; };
+		D869B8471CACA752008EC830 /* ActivityCardViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCardViewCell.m; sourceTree = "<group>"; };
+		D869B8491CAD04E7008EC830 /* ActivityProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityProgressCell.h; sourceTree = "<group>"; };
+		D869B84A1CAD04E7008EC830 /* ActivityProgressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityProgressCell.m; sourceTree = "<group>"; };
+		D869B84D1CAD6854008EC830 /* ActivityProgressData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityProgressData.h; sourceTree = "<group>"; };
+		D869B84E1CAD6854008EC830 /* ActivityProgressData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityProgressData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +98,8 @@
 				D869B8181CAC6E6F008EC830 /* ViewController.m */,
 				D869B81A1CAC6E6F008EC830 /* Main.storyboard */,
 				D869B8281CAC6F64008EC830 /* View Controllers */,
+				D869B8451CACA70F008EC830 /* Custom Cells */,
+				D869B84C1CAD6819008EC830 /* Custom Structures */,
 				D869B81D1CAC6E6F008EC830 /* Assets.xcassets */,
 				D869B81F1CAC6E6F008EC830 /* LaunchScreen.storyboard */,
 				D869B8221CAC6E6F008EC830 /* Info.plist */,
@@ -125,6 +136,26 @@
 				D869B8421CAC90DE008EC830 /* ActivityProgressViewController.xib */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D869B8451CACA70F008EC830 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D869B8461CACA752008EC830 /* ActivityCardViewCell.h */,
+				D869B8471CACA752008EC830 /* ActivityCardViewCell.m */,
+				D869B8491CAD04E7008EC830 /* ActivityProgressCell.h */,
+				D869B84A1CAD04E7008EC830 /* ActivityProgressCell.m */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		D869B84C1CAD6819008EC830 /* Custom Structures */ = {
+			isa = PBXGroup;
+			children = (
+				D869B84D1CAD6854008EC830 /* ActivityProgressData.h */,
+				D869B84E1CAD6854008EC830 /* ActivityProgressData.m */,
+			);
+			name = "Custom Structures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +239,10 @@
 				D869B83E1CAC90AB008EC830 /* ActivityListViewController.m in Sources */,
 				D869B8391CAC81A5008EC830 /* ClientHomeViewController.m in Sources */,
 				D869B8161CAC6E6F008EC830 /* AppDelegate.m in Sources */,
+				D869B8481CACA752008EC830 /* ActivityCardViewCell.m in Sources */,
+				D869B84B1CAD04E7008EC830 /* ActivityProgressCell.m in Sources */,
 				D869B8131CAC6E6F008EC830 /* main.m in Sources */,
+				D869B84F1CAD6854008EC830 /* ActivityProgressData.m in Sources */,
 				D869B8341CAC8164008EC830 /* ClinicianHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
