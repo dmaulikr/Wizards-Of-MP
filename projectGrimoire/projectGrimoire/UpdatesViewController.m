@@ -1,30 +1,30 @@
 //
-//  CreatecontentViewController.m
+//  UpdatesViewController.m
 //  projectGrimoire
 //
 //  Created by Prayaas Jain on 3/31/16.
 //  Copyright © 2016 Prayaas Jain. All rights reserved.
 //
 
-#import "CreatecontentViewController.h"
+#import "UpdatesViewController.h"
 
-@interface CreatecontentViewController ()
+@interface UpdatesViewController ()
 
 @end
 
-@implementation CreatecontentViewController
+@implementation UpdatesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
     [self.view setBackgroundColor:[UIColor colorWithRed:220/255.0f green:222/255.0f blue:227/255.0f alpha:1.0]];
-    
+
     [self setUpNavigationController];
 }
 
 - (void) setUpNavigationController {
     self.navigationItem.hidesBackButton = YES;
-    [self.navigationItem setTitle:@"Create Content"];
+    [self.navigationItem setTitle:@"Updates"];
     self.navigationController.toolbarHidden = YES;
 }
 

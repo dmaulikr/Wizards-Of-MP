@@ -7,17 +7,20 @@
 //
 
 #import "ClinicianHomeViewController.h"
+#import "UpdatesViewController.h"
 #import "ClientInfoViewController.h"
 #import "CreatecontentViewController.h"
 
 typedef enum: NSInteger {
-    ClientListView = 0,
+    UpdatesView = 0,
+    ClientListView,
     ContentCreateView
 } viewTags;
 
 @interface ClinicianHomeViewController () <UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) UpdatesViewController *updatesViewController;
 @property (strong, nonatomic) ClientInfoViewController *clientInfoViewController;
 @property (strong, nonatomic) CreatecontentViewController *createcontentViewController;
 
@@ -29,6 +32,8 @@ typedef enum: NSInteger {
     [super viewDidLoad];
     
     [self.view setBackgroundColor:[UIColor colorWithRed:220/255.0f green:222/255.0f blue:227/255.0f alpha:1.0]];
+    
+    [self initTabController];
 }
 
 - (void)initTabController {
@@ -46,40 +51,52 @@ typedef enum: NSInteger {
                                                         NSForegroundColorAttributeName : [UIColor colorWithRed:47/255.0f green:109/255.0f blue:153/255.0f alpha:1.0f],}
                                              forState:UIControlStateSelected];
     
+    self.updatesViewController = [[UpdatesViewController alloc] init];
     self.clientInfoViewController = [[ClientInfoViewController alloc] init];
     self.createcontentViewController = [[CreatecontentViewController alloc] init];
     
-    UIImage *activityListImage = [UIImage imageNamed:@"ActivityNormal"];
-    UIImage *activityListImageSelected = [UIImage imageNamed:@"ActivitySelected"];
-    activityListImage = [activityListImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    activityListImageSelected = [activityListImageSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.clientInfoViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Clients" image:activityListImage selectedImage:activityListImageSelected];
+    UIImage *updatesImage = [UIImage imageNamed:@"UpdatesNormal"];
+    UIImage *updatesImageSelected = [UIImage imageNamed:@"UpdatesSelected"];
+    updatesImage = [updatesImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    updatesImageSelected = [updatesImageSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.updatesViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Updates" image:updatesImage selectedImage:updatesImageSelected];
     
-    UIImage *activityProgressImage = [UIImage imageNamed:@"ProgressNormal"];
-    UIImage *activityProgressImageSelected = [UIImage imageNamed:@"ProgressSelected"];
-    activityProgressImage = [activityProgressImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    activityProgressImageSelected = [activityProgressImageSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.createcontentViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Create" image:activityProgressImage selectedImage:activityProgressImageSelected];
+    UIImage *clientsImage = [UIImage imageNamed:@"ClientsNormal"];
+    UIImage *clientsImageSelected = [UIImage imageNamed:@"ClientsSelected"];
+    clientsImage = [clientsImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    clientsImageSelected = [clientsImageSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.clientInfoViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Clients" image:clientsImage selectedImage:clientsImageSelected];
     
-    UINavigationController *activityListNavigationController = [[UINavigationController alloc] initWithRootViewController:self.clientInfoViewController];
-    UINavigationController *activityProgressNavigationController = [[UINavigationController alloc] initWithRootViewController:self.createcontentViewController];
+    UIImage *createImage = [UIImage imageNamed:@"CreateNormal"];
+    UIImage *createImageSelected = [UIImage imageNamed:@"CreateSelected"];
+    createImage = [createImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    createImageSelected = [createImageSelected imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.createcontentViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Create" image:createImage selectedImage:createImageSelected];
     
-    activityListNavigationController.view.tag = ClientListView;
-    activityProgressNavigationController.view.tag = ContentCreateView;
+    UINavigationController *updatesNavigationController = [[UINavigationController alloc] initWithRootViewController:self.updatesViewController];
+    UINavigationController *clientInfoNavigationController = [[UINavigationController alloc] initWithRootViewController:self.clientInfoViewController];
+    UINavigationController *createNavigationController = [[UINavigationController alloc] initWithRootViewController:self.createcontentViewController];
+    
+    updatesNavigationController.view.tag = UpdatesView;
+    clientInfoNavigationController.view.tag = ClientListView;
+    createNavigationController.view.tag = ContentCreateView;
     
     NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                                [UIFont fontWithName:@"Helvetica-Bold" size:20.0], NSFontAttributeName,
                                                [UIColor whiteColor],NSForegroundColorAttributeName,
                                                nil];
-    activityListNavigationController.navigationBar.barTintColor = [UIColor colorWithRed:47/255.0f green:109/255.0f blue:153/255.0f alpha:1.0f];//#2f6d99
-    activityListNavigationController.navigationBar.titleTextAttributes = navbarTitleTextAttributes;
-    activityProgressNavigationController.navigationBar.barTintColor = [UIColor colorWithRed:47/255.0f green:109/255.0f blue:153/255.0f alpha:1.0f];//#2f6d99
-    activityProgressNavigationController.navigationBar.titleTextAttributes = navbarTitleTextAttributes;
     
-    NSArray *myViewControllers = [[NSArray alloc] initWithObjects:activityListNavigationController,activityProgressNavigationController,nil];
+    updatesNavigationController.navigationBar.barTintColor = [UIColor colorWithRed:47/255.0f green:109/255.0f blue:153/255.0f alpha:1.0f];//#2f6d99
+    updatesNavigationController.navigationBar.titleTextAttributes = navbarTitleTextAttributes;
+    clientInfoNavigationController.navigationBar.barTintColor = [UIColor colorWithRed:47/255.0f green:109/255.0f blue:153/255.0f alpha:1.0f];//#2f6d99
+    clientInfoNavigationController.navigationBar.titleTextAttributes = navbarTitleTextAttributes;
+    createNavigationController.navigationBar.barTintColor = [UIColor colorWithRed:47/255.0f green:109/255.0f blue:153/255.0f alpha:1.0f];//#2f6d99
+    createNavigationController.navigationBar.titleTextAttributes = navbarTitleTextAttributes;
+    
+    NSArray *myViewControllers = [[NSArray alloc] initWithObjects:updatesNavigationController,clientInfoNavigationController,createNavigationController,nil];
     
     [self.tabBarController setViewControllers:myViewControllers animated:YES];
-    [self.tabBarController setSelectedIndex:0];
+    [self.tabBarController setSelectedIndex:1];
     
     self.tabBarController.delegate = self;
     
