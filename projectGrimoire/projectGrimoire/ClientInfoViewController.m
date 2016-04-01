@@ -7,6 +7,7 @@
 //
 
 #import "ClientInfoViewController.h"
+#import "ActivityProgressViewController.h"
 #import "ClientInfoData.h"
 #import "ClientInfoCell.h"
 
@@ -45,6 +46,7 @@ static NSString * const clientInfoCellIdentifier = @"ClientInfoCellIdentifier";
 }
 
 - (void) setUpNavigationController {
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationItem.hidesBackButton = YES;
     [self.navigationItem setTitle:@"Clients"];
     self.navigationController.toolbarHidden = YES;
@@ -188,8 +190,8 @@ static NSString * const clientInfoCellIdentifier = @"ClientInfoCellIdentifier";
 #pragma mark - UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(indexPath.row == 0 || indexPath.row == 2) {
-    }
+    ActivityProgressViewController *apvc = [[ActivityProgressViewController alloc] initForClient];
+    [self.navigationController pushViewController:apvc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,4 +10,6 @@
 
 @interface ActivityProgressViewController : UIViewController
 
+- (id)initForClient;
+
 @end

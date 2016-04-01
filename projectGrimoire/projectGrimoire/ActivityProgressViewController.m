@@ -10,7 +10,9 @@
 #import "ActivityProgressData.h"
 #import "ActivityProgressCell.h"
 
-@interface ActivityProgressViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface ActivityProgressViewController () <UITableViewDelegate,UITableViewDataSource> {
+    BOOL shouldAddButton;
+}
 
 @property (nonatomic ,strong) UITableView* progressTable;
 @property (nonatomic, strong) NSArray *tableData;
@@ -20,6 +22,20 @@
 static NSString * const activityProgresCellIdentifier = @"activityProgresCellIdentifier";
 
 @implementation ActivityProgressViewController
+
+- (id)init {
+    if(self = [super init]) {
+        shouldAddButton = NO;
+    }
+    return self;
+}
+
+- (id)initForClient {
+    if(self = [super init]) {
+        shouldAddButton = YES;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,9 +61,18 @@ static NSString * const activityProgresCellIdentifier = @"activityProgresCellIde
 }
 
 - (void) setUpNavigationController {
-    self.navigationItem.hidesBackButton = YES;
-    [self.navigationItem setTitle:@"Progress"];
-    self.navigationController.toolbarHidden = YES;
+    self.navigationController.toolbarHidden = YES;    
+    if(shouldAddButton) {
+        self.navigationItem.hidesBackButton = NO;
+        [self.navigationItem setTitle:@"Activity Timeline"];
+        UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
+        [addBarButton setTintColor:[UIColor whiteColor]];
+        self.navigationItem.rightBarButtonItem = addBarButton;
+    }
+    else {
+        self.navigationItem.hidesBackButton = YES;
+        [self.navigationItem setTitle:@"Progress"];
+    }
 }
 
 - (NSMutableArray *)getDummyData {
@@ -191,6 +216,11 @@ static NSString * const activityProgresCellIdentifier = @"activityProgresCellIde
     if(indexPath.row == 0 || indexPath.row == 2) {
     }
 }
+
+- (IBAction)addButtonPressed:(id)sender {
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
