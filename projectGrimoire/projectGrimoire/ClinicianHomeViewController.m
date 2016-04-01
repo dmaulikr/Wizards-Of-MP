@@ -96,7 +96,7 @@ typedef enum: NSInteger {
     NSArray *myViewControllers = [[NSArray alloc] initWithObjects:updatesNavigationController,clientInfoNavigationController,createNavigationController,nil];
     
     [self.tabBarController setViewControllers:myViewControllers animated:YES];
-    [self.tabBarController setSelectedIndex:1];
+    [self.tabBarController setSelectedIndex:0];
     
     self.tabBarController.delegate = self;
     

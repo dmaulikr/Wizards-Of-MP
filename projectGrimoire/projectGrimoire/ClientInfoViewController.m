@@ -17,7 +17,7 @@
 
 @end
 
-static NSString * const ClientInfoCellIdentifier = @"ClientInfoCellIdentifier";
+static NSString * const clientInfoCellIdentifier = @"ClientInfoCellIdentifier";
 
 @implementation ClientInfoViewController
 
@@ -35,7 +35,6 @@ static NSString * const ClientInfoCellIdentifier = @"ClientInfoCellIdentifier";
     self.clientTable.separatorColor = [UIColor darkGrayColor];
     self.clientTable.tableFooterView = [UIView new];
     self.clientTable.translatesAutoresizingMaskIntoConstraints = NO;
-    
     
     [self.view addSubview:self.clientTable];
     
@@ -163,10 +162,10 @@ static NSString * const ClientInfoCellIdentifier = @"ClientInfoCellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ClientInfoCell *cell = (ClientInfoCell *)[self.clientTable dequeueReusableCellWithIdentifier:ClientInfoCellIdentifier];
+    ClientInfoCell *cell = (ClientInfoCell *)[self.clientTable dequeueReusableCellWithIdentifier:clientInfoCellIdentifier];
     
     if(cell == nil) {
-        cell = [[ClientInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ClientInfoCellIdentifier withClientData:[self.tableData objectAtIndex:indexPath.row]];
+        cell = [[ClientInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:clientInfoCellIdentifier withClientData:[self.tableData objectAtIndex:indexPath.row]];
     }
     
     if(indexPath.row == 0 || indexPath.row == 2) {

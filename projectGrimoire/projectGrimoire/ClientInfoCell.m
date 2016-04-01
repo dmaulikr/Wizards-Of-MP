@@ -88,9 +88,8 @@
 - (void)setupConstraintsForCellView {
     
     NSLayoutConstraint *profileImageCenterYConstraint = [NSLayoutConstraint
-                                                         constraintWithItem:self.profileImageView attribute:NSLayoutAttributeTop
-                                                         relatedBy:NSLayoutRelationEqual toItem:self
-                                                         attribute:NSLayoutAttributeTop multiplier:1.0 constant:5];
+                                                         constraintWithItem:self.profileImageView attribute:NSLayoutAttributeCenterY                                                         relatedBy:NSLayoutRelationEqual toItem:self
+                                                         attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0];
     
     NSLayoutConstraint *profileImageCenterXConstraint  = [NSLayoutConstraint
                                                           constraintWithItem:self.profileImageView attribute:NSLayoutAttributeCenterX

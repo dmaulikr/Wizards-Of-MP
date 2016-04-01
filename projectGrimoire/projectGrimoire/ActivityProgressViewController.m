@@ -55,27 +55,27 @@ static NSString * const activityProgresCellIdentifier = @"activityProgresCellIde
     
     ActivityProgressData *d1 = [[ActivityProgressData alloc] init];
     [d1 setName:@"Rhyming Words"];
-    [d1 setDateCompleted:@"- 3-31-2016"];
+    [d1 setDateCompleted:@"Completed: 3-31-2016"];
     [d1 setStatus:@"Completed"];
     
     ActivityProgressData *d2 = [[ActivityProgressData alloc] init];
     [d2 setName:@"Identify Sound"];
-    [d2 setDateCompleted:@"-"];
+    [d2 setDateCompleted:@"Completed: -"];
     [d2 setStatus:@"Incomplete"];
     
     ActivityProgressData *d3 = [[ActivityProgressData alloc] init];
     [d3 setName:@"Mirror Practice"];
-    [d3 setDateCompleted:@"- 3-28-2016"];
+    [d3 setDateCompleted:@"Completed: 3-28-2016"];
     [d3 setStatus:@"Completed"];
     
     ActivityProgressData *d4 = [[ActivityProgressData alloc] init];
     [d4 setName:@"Sock Game"];
-    [d4 setDateCompleted:@"- 3-25-2016"];
+    [d4 setDateCompleted:@"Completed: 3-25-2016"];
     [d4 setStatus:@"Completed"];
     
     ActivityProgressData *d5 = [[ActivityProgressData alloc] init];
     [d5 setName:@"Repeat the Words"];
-    [d5 setDateCompleted:@"-"];
+    [d5 setDateCompleted:@"Completed: -"];
     [d5 setStatus:@"Incomplete"];
     
     [dummyData addObject:d1];
