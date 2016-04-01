@@ -41,7 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D869B80E1CAC6E6F008EC830 /* projectGrimoire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectGrimoire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D869B80E1CAC6E6F008EC830 /* TheraPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheraPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D869B8121CAC6E6F008EC830 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D869B8141CAC6E6F008EC830 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D869B8151CAC6E6F008EC830 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		D869B80F1CAC6E6F008EC830 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D869B80E1CAC6E6F008EC830 /* projectGrimoire.app */,
+				D869B80E1CAC6E6F008EC830 /* TheraPal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,7 +237,7 @@
 			);
 			name = projectGrimoire;
 			productName = projectGrimoire;
-			productReference = D869B80E1CAC6E6F008EC830 /* projectGrimoire.app */;
+			productReference = D869B80E1CAC6E6F008EC830 /* TheraPal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -433,7 +433,7 @@
 				INFOPLIST_FILE = projectGrimoire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prayaasjain.projectGrimoire;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheraPal;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -447,7 +447,7 @@
 				INFOPLIST_FILE = projectGrimoire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prayaasjain.projectGrimoire;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TheraPal;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;

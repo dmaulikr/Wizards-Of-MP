@@ -45,7 +45,7 @@ static float DATE_CARD_SPACING = 10;
 
 - (void)viewDidLayoutSubviews {
     [self.view addSubview:self.scrollView];
-    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.view.frame.size.height*1.5)];
+    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width, self.view.frame.size.height*1.45)];
     [self.scrollView setScrollEnabled:YES];
     [self.scrollView setBackgroundColor:[UIColor clearColor]];
     
@@ -57,7 +57,12 @@ static float DATE_CARD_SPACING = 10;
     [self.navigationItem setTitle:@"Activities"];
     self.navigationController.toolbarHidden = YES;
     
-    UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed:)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"Settings"] forState:UIControlStateNormal];
+    [button setFrame:CGRectMake(0, 0, 32, 32)];
+    [button addTarget:self action:@selector(settingsButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *addBarButton = [[UIBarButtonItem alloc] initWithCustomView:button];
     [addBarButton setTintColor:[UIColor whiteColor]];
     self.navigationItem.rightBarButtonItem = addBarButton;
 }
@@ -81,13 +86,16 @@ static float DATE_CARD_SPACING = 10;
     card1.nameLabel.textColor = [UIColor whiteColor];
     card1.nameLabel.textAlignment = NSTextAlignmentLeft;
     card1.nameLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:22.0];
-    card1.estimatedTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(card1.nameLabel.frame.origin.x, card1.nameLabel.frame.size.height+10+60, card1.nameLabel.frame.size.width, card1.nameLabel.frame.size.height/2)];
+    card1.estimatedTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(card1.nameLabel.frame.origin.x, card1.nameLabel.frame.size.height+10+55, card1.nameLabel.frame.size.width, card1.nameLabel.frame.size.height/2)];
     card1.estimatedTimeLabel.text = @"Estimated Time: 10 mins";
     card1.estimatedTimeLabel.textColor = [UIColor whiteColor];
     card1.estimatedTimeLabel.textAlignment = NSTextAlignmentRight;
     card1.estimatedTimeLabel.font = [UIFont fontWithName:@"Helvetica-Oblique" size:12.0];
+    card1.descIcon = [[UIImageView alloc] initWithFrame:CGRectMake(10, card1.nameLabel.frame.size.height+25, 40, 40)];
+    card1.descIcon.image = [UIImage imageNamed:@"book"];
     [card1 addSubview:card1.nameLabel];
     [card1 addSubview:card1.estimatedTimeLabel];
+    [card1 addSubview:card1.descIcon];
     
     scrollY += cardHeight + CARD_DATE_SPACING;
     
@@ -106,13 +114,16 @@ static float DATE_CARD_SPACING = 10;
     card2.nameLabel.textColor = [UIColor whiteColor];
     card2.nameLabel.textAlignment = NSTextAlignmentLeft;
     card2.nameLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:22.0];
-    card2.estimatedTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(card2.nameLabel.frame.origin.x, card2.nameLabel.frame.size.height+10+60, card2.nameLabel.frame.size.width, card2.nameLabel.frame.size.height/2)];
+    card2.estimatedTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(card2.nameLabel.frame.origin.x, card2.nameLabel.frame.size.height+10+55, card2.nameLabel.frame.size.width, card2.nameLabel.frame.size.height/2)];
     card2.estimatedTimeLabel.text = @"Estimated Time: 8 mins";
     card2.estimatedTimeLabel.textColor = [UIColor whiteColor];
     card2.estimatedTimeLabel.textAlignment = NSTextAlignmentRight;
     card2.estimatedTimeLabel.font = [UIFont fontWithName:@"Helvetica-Oblique" size:12.0];
+    card2.descIcon = [[UIImageView alloc] initWithFrame:CGRectMake(10, card2.nameLabel.frame.size.height+25, 40, 40)];
+    card2.descIcon.image = [UIImage imageNamed:@"abc"];
     [card2 addSubview:card2.nameLabel];
     [card2 addSubview:card2.estimatedTimeLabel];
+    [card2 addSubview:card2.descIcon];
     
     scrollY += cardHeight + CARD_DATE_SPACING;
     
@@ -131,13 +142,16 @@ static float DATE_CARD_SPACING = 10;
     card3.nameLabel.textColor = [UIColor whiteColor];
     card3.nameLabel.textAlignment = NSTextAlignmentLeft;
     card3.nameLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:22.0];
-    card3.estimatedTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(card3.nameLabel.frame.origin.x, card3.nameLabel.frame.size.height+10+60, card3.nameLabel.frame.size.width, card3.nameLabel.frame.size.height/2)];
+    card3.estimatedTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(card3.nameLabel.frame.origin.x, card3.nameLabel.frame.size.height+10+55, card3.nameLabel.frame.size.width, card3.nameLabel.frame.size.height/2)];
     card3.estimatedTimeLabel.text = @"Estimated Time: 15 mins";
     card3.estimatedTimeLabel.textColor = [UIColor whiteColor];
     card3.estimatedTimeLabel.textAlignment = NSTextAlignmentRight;
     card3.estimatedTimeLabel.font = [UIFont fontWithName:@"Helvetica-Oblique" size:12.0];
+    card3.descIcon = [[UIImageView alloc] initWithFrame:CGRectMake(10, card3.nameLabel.frame.size.height+25, 40, 40)];
+    card3.descIcon.image = [UIImage imageNamed:@"123"];
     [card3 addSubview:card3.nameLabel];
     [card3 addSubview:card3.estimatedTimeLabel];
+    [card3 addSubview:card3.descIcon];
     
     scrollY += cardHeight + CARD_DATE_SPACING;
     
@@ -152,17 +166,20 @@ static float DATE_CARD_SPACING = 10;
     ActivityCardView *card4 = [[ActivityCardView alloc] initWithFrame:CGRectMake(cardX, scrollY, cardWidth, cardHeight)];
     [card4 setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"SeaGreenBG"]]];
     card4.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, card4.frame.size.width-20, card4.frame.size.height/3-10)];
-    card4.nameLabel.text = @"Identify the Sound";
+    card4.nameLabel.text = @"Mirror Practice";
     card4.nameLabel.textColor = [UIColor whiteColor];
     card4.nameLabel.textAlignment = NSTextAlignmentLeft;
     card4.nameLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:22.0];
-    card4.estimatedTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(card4.nameLabel.frame.origin.x, card4.nameLabel.frame.size.height+10+60, card4.nameLabel.frame.size.width, card4.nameLabel.frame.size.height/2)];
+    card4.estimatedTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(card4.nameLabel.frame.origin.x, card4.nameLabel.frame.size.height+10+55, card4.nameLabel.frame.size.width, card4.nameLabel.frame.size.height/2)];
     card4.estimatedTimeLabel.text = @"Estimated Time: 6 mins";
     card4.estimatedTimeLabel.textColor = [UIColor whiteColor];
     card4.estimatedTimeLabel.textAlignment = NSTextAlignmentRight;
     card4.estimatedTimeLabel.font = [UIFont fontWithName:@"Helvetica-Oblique" size:12.0];
+    card4.descIcon = [[UIImageView alloc] initWithFrame:CGRectMake(10, card4.nameLabel.frame.size.height+25, 40, 40)];
+    card4.descIcon.image = [UIImage imageNamed:@"mirror"];
     [card4 addSubview:card4.nameLabel];
     [card4 addSubview:card4.estimatedTimeLabel];
+    [card4 addSubview:card4.descIcon];
     
     scrollY += cardHeight + CARD_DATE_SPACING;
     
@@ -177,7 +194,7 @@ static float DATE_CARD_SPACING = 10;
     
 }
 
-- (IBAction)addButtonPressed:(id)sender {
+- (IBAction)settingsButtonPressed:(id)sender {
     
 }
 

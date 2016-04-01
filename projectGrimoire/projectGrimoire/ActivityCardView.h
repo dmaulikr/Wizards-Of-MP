@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *estimatedTimeLabel;
+@property (nonatomic, strong) UIImageView *descIcon;
 
 @end
